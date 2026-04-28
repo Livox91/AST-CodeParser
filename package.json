@@ -1,0 +1,25 @@
+{
+  "name": "fyp-github",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hpcc-js/wasm": "^2.26.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "dotenv": "^17.4.2",
+    "simple-git": "^3.36.0",
+    "ts-morph": "^28.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
