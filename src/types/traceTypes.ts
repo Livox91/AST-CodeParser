@@ -13,6 +13,7 @@ export type TraceNode = {
     className?: string;
     startLine?: number;
     endLine?: number;
+    code?: string | undefined;
     imports: TraceImports;
     callers: TraceNode[];
     cycle?: boolean;

@@ -24,6 +24,7 @@ type DefinitionInfo = {
     className?: string;
     startLine: number;
     endLine: number;
+    code: string;
     imports: TraceImports;
 };
 
@@ -188,6 +189,7 @@ function collectDefinitions(
                     filePath,
                     startLine: range.startLine,
                     endLine: range.endLine,
+                    code: fn.getText(),
                     imports
                 },
                 [fn]
@@ -215,6 +217,7 @@ function collectDefinitions(
                         className,
                         startLine: range.startLine,
                         endLine: range.endLine,
+                        code: method.getText(),
                         imports
                     },
                     [method]
@@ -246,6 +249,7 @@ function collectDefinitions(
                     filePath,
                     startLine: range.startLine,
                     endLine: range.endLine,
+                    code: variableDecl.getText(),
                     imports
                 },
                 [variableDecl, initializer]
@@ -314,6 +318,7 @@ function buildTraceNode(
         filePath: definition.filePath,
         startLine: definition.startLine,
         endLine: definition.endLine,
+        code: definition.code,
         imports: definition.imports,
         callers: []
     };
@@ -340,6 +345,7 @@ function buildTraceNode(
                 name: callerDefinition?.name ?? callerId,
                 kind: callerDefinition?.kind ?? "function",
                 filePath: callerDefinition?.filePath ?? "",
+                code: callerDefinition?.code,
                 imports: callerDefinition?.imports ?? {
                     external: [],
                     local: []
