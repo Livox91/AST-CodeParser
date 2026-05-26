@@ -17,6 +17,7 @@ async function main() {
             throw new Error("REPO_URL not found in .env");
         }
 
+        console.log("[index] Starting process for repo:", repoUrl);
 
 
         // 1. Clone repo
