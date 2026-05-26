@@ -17,7 +17,7 @@ async function main() {
             throw new Error("REPO_URL not found in .env");
         }
 
-        console.log("[index] Starting...");
+
 
         // 1. Clone repo
         const repoPath = await cloneRepo(repoUrl);
